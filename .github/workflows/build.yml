@@ -80,12 +80,15 @@ jobs:
 
     - name: Setup zram
       run: |
+        set +e
         sudo apt install linux-modules-extra-$(uname -r) zram-tools -y
         sudo modprobe zram
         sudo sed -i 's/^#PERCENT=50/PERCENT=90/' /etc/default/zramswap
         sudo sed -i 's/^#PRIORITY=100/PRIORITY=1000/' /etc/default/zramswap
         sudo systemctl restart zramswap
         zramctl
+        echo 'zram setup finished (non-fatal; compile continues even if zram unavailable)'
+        set -e
 
     - name: Setup environment
       run: |
