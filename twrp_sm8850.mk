@@ -10,8 +10,8 @@ DEVICE_PATH := device/xiaomi/sm8850
 $(call inherit-product, $(DEVICE_PATH)/device.mk)
 
 ## Device identifier
-PRODUCT_DEVICE := sm8850
-PRODUCT_NAME := twrp_sm8850
+PRODUCT_DEVICE := byron
+PRODUCT_NAME := twrp_byron
 PRODUCT_BRAND := Xiaomi
-PRODUCT_MODEL := sm8850
+PRODUCT_MODEL := 2605EPN8EC
 PRODUCT_MANUFACTURER := Xiaomi
